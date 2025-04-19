@@ -1,2 +1,2 @@
 # Wok
-A vocabulary trainer with python django
+A vocabulary trainer with PHP, HTML and JavaScript
