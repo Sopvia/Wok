@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_SESSION['account_loggedin'])){ 
+if (!isset($_SESSION['account_loggedin'])) { 
     header('Location: index.php');
     exit;
 }
@@ -18,6 +18,5 @@ include '../header.php';
         <p>You are logged in!</p>
     </div>
 </div>
-
 
 <?php include '../footer.php';?>

@@ -7,13 +7,19 @@ if (isset($_SESSION['account_loggedin'])) {
 }
 ?>
 
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Login</title>
+</head>
     <body>
         <div class="login">
             <h1>User Login</h1>
 
             <form action="authenticate.php" method="post" class="form login-form">
-                <label class="form-label" for="username">Username!</label>
+                <label class="form-label" for="username">Username</label>
                 <div class="form-group">
                     <input class="form-input" type="text" name="username" placeholder="Username" id="username" required>
                 </div>
