@@ -1,0 +1,125 @@
+:root {
+    --background: #F2F0EF;
+    --fontColor: #0B1215;
+    --btnColor: #D4EAC8;
+    --accentColor: #2E282A;
+  }
+
+@media all {
+    html, body {
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+        padding: 20px;
+        background-color: var(--background);
+        color: var(--fontColor);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login {
+        box-sizing: border-box;
+        height: fit-content;
+        width: 40%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 16px;
+    }
+
+    .login .login-form {
+        box-sizing: border-box;
+        margin: 5px 0 5px 0;
+    }
+
+    .login .login-form div,
+    .login .login-form button,
+    .login .login-form a {
+        margin: 10px;
+    }
+
+    .login .login-form p,
+    .login .login-form a.register-link {
+        margin: 0;
+    }
+
+    .login .login-form:last-child {
+        margin-bottom: 20px;
+    }
+
+    .login .login-form hr {
+        margin-bottom: 20px;
+    }
+
+    .login-form input {
+        box-sizing: border-box;
+        border: 2px #ccc solid;
+        height: 10%;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    .login-form input:focus {
+        border: 2px var(--btnColor) solid;
+    }
+
+    .login-form .icons {
+        text-align: center;
+        font-size: 16px;
+        margin: 5px;
+        color: var(--accentColor);
+    }
+
+    .login-form .btn {
+        box-sizing: border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
+        border: 1px black solid;
+        border-radius: 4px;
+        background-color: var(--btnColor);
+        height: auto;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 24px;
+        border-style: none;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+        box-sizing: border-box;
+        color: var(--fontColor);
+        height: 48px;
+        justify-content: center;
+        letter-spacing: .25px;
+        line-height: normal;
+        max-width: 100%;
+        overflow: visible;
+        padding: 2px 24px;
+        position: relative;
+        text-transform: none;
+        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    }
+
+    .login-form .btn:hover {
+        background: var(--btnColor);
+    }
+
+    .login-form a {
+        color: var(--fontColor);
+        text-decoration: none;
+    }
+
+    .login-form a:hover {
+        text-decoration: underline;
+    }
+}
