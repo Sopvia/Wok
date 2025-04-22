@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" rel="stylesheet" type="text/css">
     <link href="../icons/solid.css" rel="stylesheet" type="text/css">
-<!--     <link href="../style.css" rel="stylesheet" type="text/css">
-    <link href="../style.css" rel="stylesheet" type="text/css">
--->    
+    <link href="../assets/fontawesome/solid.css" rel="stylesheet">
+    <link href="../assets/fontawesome/all.min.css" rel="stylesheet">
+
     <title>Wok</title>
 </head>
 <body>
@@ -20,10 +20,16 @@
                 </a>
 
                 <nav class="menu">
-                    <a class="" href="home.php">Home</a>
-                    <a class="" href="profile.php">Profile</a>
-                    <a class="" href="logout.php">
-                        <div class="icon">i</div>
+                    <a class="nav-btn" href="home.php">
+                        <i class="fa-solid fa-house icons"></i>
+                        Home
+                    </a>
+                    <a class="nav-btn" href="profile.php">
+                        <i class="fa-solid fa-user icons"></i>
+                        Profile
+                    </a>
+                    <a class="nav-btn" href="logout.php">
+                        <i class="fa-solid fa-right-from-bracket icons"></i>
                         Logout
                     </a>
                 </nav>

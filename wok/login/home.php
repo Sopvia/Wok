@@ -9,13 +9,17 @@ include '../header.php';
 ?>
 
 <div class="content">
-    <div class="page-title">
-        <h2>Home</h2>
-        <p>Welcome back, <?=htmlspecialchars($_SESSION['account_name'], ENT_QUOTES)?>!</p>
-    </div>
-
     <div class="block">
-        <p>You are logged in!</p>
+        <div class="page-title">
+            <h2>Home</h2>
+            <h2>Welcome back, <?=htmlspecialchars($_SESSION['account_name'], ENT_QUOTES)?>!</h2>
+        </div>
+
+        <hr>
+        
+        <div>
+            <h3>Your Decks:</h3>
+        </div>    
     </div>
 </div>
 

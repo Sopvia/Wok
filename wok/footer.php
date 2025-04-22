@@ -1,6 +1,8 @@
     </main>
     <footer>
-        <p>Footer</p>
+        <div class="container">
+            <p>Footer</p>
+        </div>
     </footer>
 </body>
 </html>
