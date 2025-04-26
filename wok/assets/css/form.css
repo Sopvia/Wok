@@ -1,0 +1,91 @@
+@media all {
+    .form hr {
+        margin-bottom: 20px;
+    }
+
+    .form input {
+        box-sizing: border-box;
+        border: 2px #ccc solid;
+        height: fit-content;
+        font-size: 15px;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    .form input:focus {
+        border: 2px var(--accentColor2) solid;
+    }
+
+    .form {
+        box-sizing: border-box;
+        margin: 5px 0 5px 0;
+    }
+
+    .form div,
+    .form button,
+    .form a {
+        margin: 10px;
+    }
+
+    .form p,
+    .form a.register-link {
+        margin: 0;
+    }
+
+    .form:last-child {
+        margin-bottom: 20px;
+    }
+
+    .form .icons {
+        text-align: center;
+        align-items: center;
+        font-size: 18px;
+        margin: 5px;
+        color: var(--accentColor);
+    }
+
+    .form .btn {
+        box-sizing: border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
+        border: 1px black solid;
+        border-radius: 4px;
+        background-color: var(--bgColor);
+        height: auto;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 24px;
+        border-style: none;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+        box-sizing: border-box;
+        color: var(--fontColor);
+        height: 38px;
+        justify-content: center;
+        letter-spacing: .25px;
+        line-height: normal;
+        max-width: 40%;
+        overflow: visible;
+        padding: 2px 24px;
+        position: relative;
+        text-transform: none;
+        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    }
+
+    .form .btn:hover {
+        background: var(--accentColor2);
+        color: #fff;
+    }
+
+    .form a {
+        color: var(--fontColor);
+        text-decoration: none;
+    }
+
+    .form a:hover {
+        text-decoration: underline;
+    }
+}

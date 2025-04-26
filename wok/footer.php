@@ -1,7 +1,7 @@
     </main>
     <footer>
-        <div class="container">
-            <p>Footer</p>
+        <div class="container contact">
+            <p></p>
         </div>
     </footer>
 </body>

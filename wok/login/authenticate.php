@@ -9,7 +9,14 @@ $DATABASE_NAME = 'wokLogin';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
 if (mysqli_connect_errno()) {
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+    if (!mysqli_select_db($con, $DATABASE_NAME)) {
+        $stmt = 'CREATE DATABASE wokLogin';
+        if ($result = mysqli_query($con, $stmt)) {
+            echo 'Database was created successfully!';
+        }
+    } else {
+        exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+    }
 }
 
 if (!isset($_POST['username'], $_POST['password'])) {
@@ -30,7 +37,7 @@ if ($stmt = $con->prepare('SELECT `id`, `password` FROM `accounts` WHERE `userna
                 $_SESSION['account_name'] = $_POST['username'];
                 $_SESSION['account_id'] = $id;
     
-                header('Location: home.php');
+                header('Location: ../home.php');
                 exit;
             } else {
                 echo 'Incorrect username or password!';

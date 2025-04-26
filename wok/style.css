@@ -1,10 +1,3 @@
-:root {
-    --background: #F2F0EF;
-    --fontColor: #0B1215;
-    --btnColor: #D4EAC8;
-    --accentColor: #2E282A;
-  }
-
 @media all {
     html {
         height: 100vh !important;
@@ -14,33 +7,50 @@
     html, body {
         box-sizing: border-box;
         height: 100vh;
+        margin: 0;
         background-color: var(--background);
         color: var(--fontColor);
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-size: 18px;
-        padding: 10px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         overflow-x: hidden;
+        overflow-y: scroll;
     }
 
     header {
         box-sizing: border-box;
-        min-height: 20%;
-        height: 20%;
+        min-height: var(--headerFooter);
+        height: var(--headerFooter);
         width: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
     }
 
     main {
         box-sizing: border-box;
-        flex: 1;
+        height: 78%;
+        max-height: 100%;
+        box-shadow: 0px 0px 7px 1px rgba(45, 57, 68, 0.05);
+        margin: 0 15%;
+        padding: 40px;
+        border-radius: 5px;
+        background-color: var(--bg);
+        z-index: 3;
+        position: relative;
     }
 
     footer {
         box-sizing: border-box;
-        min-height: 20%;
-        height: 20%;
+        min-height: var(--headerFooter);
+        height: var(--headerFooter);
         width: 100%;
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        flex: 1;
     }
 
     a {
@@ -49,15 +59,49 @@
         text-decoration: none;
     }
 
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: var(--accentColor);
+    }
+
+    hr.vertical {
+        margin: 10px;
+    }
+
     .btn {
         box-sizing: border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
         border: 1px black solid;
         border-radius: 4px;
-        background-color: var(--btnColor);
-        height: 40px;
-        width: 80px;
+        height: auto;
+        width: auto;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 24px;
+        border-style: none;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+        box-sizing: border-box;
+        color: var(--fontColor);
+        height: 38px;
+        justify-content: center;
+        letter-spacing: .25px;
+        line-height: normal;
+        max-width: 100%;
+        overflow: visible;
+        padding: 2px 24px;
+        position: relative;
+        text-transform: none;
+        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    }
+
+    .btn:hover {
+        background: var(--accentColor);
+        color: #fff;
     }
 
     .container {
@@ -67,20 +111,20 @@
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        padding: 10px;
+        padding: 25px;
         background: rgba(255, 255, 255, 0.2);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 6px;
+        border-radius: 0;
     }
 
     .container > a {
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        width: 30%;
+        justify-content: start;
+        width: 50%;
         margin-right: 10px;
     }
 
@@ -90,6 +134,11 @@
 
     .container .logo {
         margin: 0 5px 0 5px !important;
+        font-size: 24px !important;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }
 
     .container .menu {
@@ -97,61 +146,159 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 70%;
+        width: 50%;
         margin: 5px;
         padding: 5px;
     }
 
     .container .icons {
         text-align: center;
+        align-items: center;
         font-size: 16px;
-        margin: 5px;
+        margin-right: 5px;
+        margin-bottom: 2px;
         color: var(--accentColor);
     }
 
-    .container .menu a.nav-btn {
+    .container .menu a.nav-btn,
+    .container .menu div {
         box-sizing: border-box;
         display: flex;
         margin: 5px;
         padding: 5px;
+        justify-content: center;
         align-items: center;
         border: 1px transparent solid;
         border-radius: 6px;
         text-decoration: underline;
         text-decoration-color: transparent;
         text-decoration-thickness: 2px;
-        transition: 0.4s;
+        transition: 0.3s;
     }
 
     .container .menu a.nav-btn:hover {
-        border: 1px var(--btnColor) solid;
+        border: 1px var(--accentColor) solid;
         border-radius: 6px;
-        text-decoration-color: var(--btnColor);
+        text-decoration-color: var(--accentColor);
     }
 
-    .content .block {
-        box-shadow: 0px 0px 7px 1px rgba(45, 57, 68, 0.05);
-        margin: 25px 0;
-        padding: 25px;
-        border-radius: 5px;
-        background-color: #fff;
+    .content {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
     }
 
-    .content .block .page-title  {
+    .content .page-title  {
+        box-sizing: border-box;
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    .page-title hr {
+        width: 100%;
+    }
+
+    p, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+
+    dialog {
+        height: fit-content;
+        max-width: 40%;
+        width: 20%;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.486);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 16px;
+    }
+
+    dialog.addLanguageDialog > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    dialog.addLanguageDialog > div > button.buttonClose {
+        box-sizing: border-box;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 0;
+        right: 0;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    form.form.addLang {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.tiles {
+        box-sizing: border-box;
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    div.tiles div.row {
+        box-sizing: border-box;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        margin: 20px 0 20px 0;
+        height: 100%;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
-    .page-title h2 {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
+    div.tiles div.tile {
+        box-sizing: border-box;
+        background-color: var(--lightAccent);
+        border: 1px rgba(17, 17, 26, 0.1) solid;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     }
 
-    p, h2 {
-        margin: 0;
+    div.tiles div.tile.info {
+        height: 20%;
+        width: 100% !important;
+        margin: 5px;
+    }
+
+    div.tiles div.tile.langs {
+        height: 100%;
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    div.tiles div.tile.decks {
+        height: 100%;
+        flex: 2;  
+        margin-left: 5px;
+    }
+
+    div.tiles div.tile .title {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px 10px;
+        background-color: var(--tileBg);
+        color: var(--bg);
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    }
+
+    div.tiles div.tile .tile-content {
+        box-sizing: border-box;
+        padding: 5px 10px;
     }
 }

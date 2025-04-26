@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['account_loggedin'])) {
-    header('Location: home.php');
+    header('Location: ../home.php');
     exit;
 }
 ?>
@@ -12,6 +12,8 @@ if (isset($_SESSION['account_loggedin'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/form.css" rel="stylesheet" type="text/css">
+        <link href="../assets/css/var.css" rel="stylesheet">
         <link href="../assets/fontawesome/solid.css" rel="stylesheet">
         <link href="../assets/fontawesome/all.min.css" rel="stylesheet">
 
