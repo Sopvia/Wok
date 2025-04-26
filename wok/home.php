@@ -5,6 +5,18 @@ if (!isset($_SESSION['account_loggedin'])) {
     header('Location: login/index.php');
     exit;
 }
+
+$DATABASE_HOST = '127.0.0.1';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'wokLogin';
+
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
+if (mysqli_connect_errno()) {
+    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
 include 'header.php';
 ?>
 
@@ -35,7 +47,20 @@ include 'header.php';
                 <div class="tile-content">
                     <div class="langsTable">
                         <table>
-                            <th>!!!</th>
+                        <?php
+                            $stmt = $con->prepare('SELECT `lang`, `date_added` FROM `langs` WHERE `user_id` = ?');
+                            $stmt->bind_param("i", $_SESSION['account_id']);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc())
+                                {
+                                    echo '<tr>' . '<td>' . $row['lang'] . '</td>' . '</tr>';
+                                }
+                            } else {
+                                echo '<tr><td>No languages found</td></tr>';
+                            }
+                        ?>
                         </table>
                     </div>
 
@@ -69,7 +94,7 @@ include 'header.php';
                 </div>
 
                 <div class="tile-content">
-
+                    !!!
                 </div>
             </div>
         </div>
