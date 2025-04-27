@@ -47,20 +47,27 @@ include 'header.php';
                 <div class="tile-content">
                     <div class="langsTable">
                         <table>
-                        <?php
-                            $stmt = $con->prepare('SELECT `lang`, `date_added` FROM `langs` WHERE `user_id` = ?');
-                            $stmt->bind_param("i", $_SESSION['account_id']);
-                            $stmt->execute();
-                            $result = $stmt->get_result();
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc())
-                                {
-                                    echo '<tr>' . '<td>' . $row['lang'] . '</td>' . '</tr>';
+                            <tr>
+                                <th style="width: 60%; text-align: start;">Language</th>
+                                <th style="text-align: start;">Date added</th>
+                            </tr>
+                            <?php
+                                $stmt = $con->prepare("SELECT `lang`, DATE_FORMAT(date_added, '%d.%m.%Y') as date_added FROM `langs` WHERE `user_id` = ?");
+                                $stmt->bind_param("i", $_SESSION['account_id']);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc())
+                                    {
+                                        echo '<tr>';
+                                        echo '<td>' . htmlspecialchars($row['lang'], ENT_QUOTES) . '</td>';
+                                        echo '<td>' . $row['date_added'] . '</td>';
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo '<p>No languages found</p>';
                                 }
-                            } else {
-                                echo '<tr><td>No languages found</td></tr>';
-                            }
-                        ?>
+                            ?>
                         </table>
                     </div>
 

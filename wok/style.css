@@ -69,41 +69,6 @@
         margin: 10px;
     }
 
-    .btn {
-        box-sizing: border-box;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 16px;
-        border: 1px black solid;
-        border-radius: 4px;
-        height: auto;
-        width: auto;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        align-items: center;
-        background-color: #fff;
-        border-radius: 24px;
-        border-style: none;
-        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-        box-sizing: border-box;
-        color: var(--fontColor);
-        height: 38px;
-        justify-content: center;
-        letter-spacing: .25px;
-        line-height: normal;
-        max-width: 100%;
-        overflow: visible;
-        padding: 2px 24px;
-        position: relative;
-        text-transform: none;
-        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-    }
-
-    .btn:hover {
-        background: var(--accentColor);
-        color: #fff;
-    }
-
     .container {
         box-sizing: border-box;
         display: flex;
@@ -290,6 +255,7 @@
 
     div.tiles div.tile .title {
         box-sizing: border-box;
+        height: 40px;
         width: 100%;
         padding: 5px 10px;
         background-color: var(--tileBg);
@@ -299,6 +265,43 @@
 
     div.tiles div.tile .tile-content {
         box-sizing: border-box;
+        height: calc(100% - 40px);
+        width: 100%;
         padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div.tiles div.tile .tile-content .langsTable,
+    div.tiles div.tile .tile-content .langsAdd {
+        box-sizing: border-box;
+        height: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.tiles div.tile .tile-content .langsTable {
+        flex: 2;
+    }
+
+    div.tiles div.tile .tile-content .langsAdd {
+        flex: 0;
+    }
+
+    div.tiles div.tile .tile-content .langsTable {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    table {
+        display: table;
+        border-spacing: 10px;
     }
 }
