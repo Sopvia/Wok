@@ -31,7 +31,7 @@ if ($stmt = $con->prepare('SELECT `lang_id`, `lang` FROM `langs` WHERE `user_id`
                 $stmt->bind_param('ssi', $postLang, $date, $_SESSION['account_id']);
                 $stmt->execute();
 
-                header('Location: ../home.php');
+                header('Location: ../langOverview.php');
                 exit;
             } else {
                 echo 'Language already exists!';

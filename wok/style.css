@@ -255,12 +255,19 @@
 
     div.tiles div.tile .title {
         box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         height: 40px;
         width: 100%;
         padding: 5px 10px;
         background-color: var(--tileBg);
         color: var(--bg);
         box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    }
+
+    .title a .icons {
+        color: var(--bg);
     }
 
     div.tiles div.tile .tile-content {
@@ -270,27 +277,9 @@
         padding: 5px 10px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
 
-    div.tiles div.tile .tile-content .langsTable,
-    div.tiles div.tile .tile-content .langsAdd {
-        box-sizing: border-box;
-        height: 100%;
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    div.tiles div.tile .tile-content .langsTable {
-        flex: 2;
-    }
-
-    div.tiles div.tile .tile-content .langsAdd {
-        flex: 0;
-    }
-
-    div.tiles div.tile .tile-content .langsTable {
+    div.langsTable {
         box-sizing: border-box;
         height: 100%;
         width: 100%;
@@ -300,8 +289,32 @@
         text-align: start;
     }
 
+    div.content.overview div.lang-overview {
+        box-sizing: border-box;
+        height: 90%;
+        width: 100%;
+    }
+
+    div.content.overview div.langsAdd {
+        box-sizing: border-box;
+        width: 100%;
+        height: 15%;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    div.content.overview div.langsTable {
+        height: 85% !important;
+        display: flex;
+    }
+
     table {
         display: table;
-        border-spacing: 10px;
+        border-spacing: 5px;
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--bg);
     }
 }

@@ -42,6 +42,9 @@ include 'header.php';
             <div class="tile langs">
                 <div class="title">
                     <h3>Languages</h3>
+                    <a href="langOverview.php">
+                        <i class="fa-solid fa-pencil icons"></i>
+                    </a>
                 </div>
 
                 <div class="tile-content">
@@ -52,15 +55,16 @@ include 'header.php';
                                 <th style="text-align: start;">Date added</th>
                             </tr>
                             <?php
-                                $stmt = $con->prepare("SELECT `lang`, DATE_FORMAT(date_added, '%d.%m.%Y') as date_added FROM `langs` WHERE `user_id` = ?");
+                                $stmt = $con->prepare("SELECT `lang`, DATE_FORMAT(date_added, '%d.%m.%Y') as date_added FROM `langs` WHERE `user_id` = ? ORDER BY date_added DESC");
                                 $stmt->bind_param("i", $_SESSION['account_id']);
                                 $stmt->execute();
                                 $result = $stmt->get_result();
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc())
                                     {
+                                        $name = ucfirst($row['lang']);
                                         echo '<tr>';
-                                        echo '<td>' . htmlspecialchars($row['lang'], ENT_QUOTES) . '</td>';
+                                        echo '<td>' . htmlspecialchars($name, ENT_QUOTES) . '</td>';
                                         echo '<td>' . $row['date_added'] . '</td>';
                                         echo '</tr>';
                                     }
@@ -69,28 +73,6 @@ include 'header.php';
                                 }
                             ?>
                         </table>
-                    </div>
-
-                    <div class="langsAdd">
-                        <button class="btn" onclick="openDialog()">
-                            <i class="fa-solid fa-plus icons"></i>
-                        </button>
-                        <dialog class="addLanguageDialog">
-                            <div>
-                                <form action="vocab/addLanguage-process.php" method="post" class="form addLang">
-                                    <label class="form-label" for="language">Language</label>
-                                    <div class="form-group">
-                                        <i class="fa-solid fa-language icons"></i>
-                                        <input class="form-input" type="text" name="language" placeholder="Language" id="language" required>
-                                    </div>
-
-                                    <button class="btn buttonSubmit" type="submit">Add</button>
-                                </form>
-                                <button class="buttonClose" onclick="closeDialog()">
-                                    <i class="fa-solid fa-xmark icons"></i>
-                                </button>
-                            </div>
-                        </dialog>
                     </div>
                 </div>
             </div>
